@@ -7,5 +7,5 @@ install:
 script:
   - export FrameworkPathOverride=/usr/lib/mono/4.5/
   - dotnet restore GrEmit/GrEmit.sln
-  - dotnet build GrEmit/GrEmit.sln
+  - dotnet build --configuration Release GrEmit/GrEmit.sln
   - nunit-console ./GrEmit/Tests/bin/Release/net45/Tests.dll
