@@ -1,0 +1,11 @@
+language: csharp
+mono: none
+dotnet: 2.0.0
+solution: GrEmit/GrEmit.sln
+install:
+  - sudo apt-get install nunit-console
+script:
+  - export FrameworkPathOverride=/usr/lib/mono/4.5/
+  - dotnet restore GrEmit/GrEmit.sln
+  - dotnet build GrEmit/GrEmit.sln
+  - nunit-console ./GrEmit/Tests/bin/Release/net45/Tests.dll
